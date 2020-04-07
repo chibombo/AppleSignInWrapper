@@ -16,6 +16,12 @@ An easy way to implement Apple Sign In
 * Swift 4+
 * SetUp Capabilities of the Project
 
+## Installation
+
+```
+pod 'AppleSignInWrapper'
+```
+
 ## Example
 
 * How to check **state** of the session if exist. **KeychainItem** is used to get and set appleId in Keychain(Not included in the wrapper)
@@ -99,5 +105,12 @@ class ViewController: AppleIDLoginDelegate {
          
     }
 }
-    
-    ```
+```
+
+* How to use AppleSignInButton in Storyboards
+   * Create an UIButton in your Storyboard
+   * Set **AppleIDButtonWrapper** as Custom Class of the button
+   * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Setup1.png "How to set AppleIDButtonWrapper")   
+   * Enjoy and custom your button
+   * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/setup2.png "How to set AppleIDButtonWrapper")  
+      
