@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF22AAD4243A9F5B004F9542 /* AppleSignInWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF22AAD3243A9F5B004F9542 /* AppleSignInWrapper.swift */; };
+		BF22AAD6243AA6B0004F9542 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF22AAD5243AA6B0004F9542 /* UserInformation.swift */; };
+		BF22AADB243AB181004F9542 /* AppleIDLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF22AADA243AB181004F9542 /* AppleIDLoginDelegate.swift */; };
 		BF4336EF243A5F6300ED6188 /* AppleIDButtonWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF4336E5243A5F6300ED6188 /* AppleIDButtonWrapper.framework */; };
 		BF4336F4243A5F6300ED6188 /* AppleIDButtonWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4336F3243A5F6300ED6188 /* AppleIDButtonWrapperTests.swift */; };
 		BF4336F6243A5F6300ED6188 /* AppleIDButtonWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = BF4336E8243A5F6300ED6188 /* AppleIDButtonWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF433700243A5FD800ED6188 /* AppleIDButtonWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4336FF243A5FD800ED6188 /* AppleIDButtonWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +27,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF22AAD3243A9F5B004F9542 /* AppleSignInWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInWrapper.swift; sourceTree = "<group>"; };
+		BF22AAD5243AA6B0004F9542 /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		BF22AADA243AB181004F9542 /* AppleIDLoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppleIDLoginDelegate.swift; path = AppleIDButtonWrapper/Delegate/AppleIDLoginDelegate.swift; sourceTree = SOURCE_ROOT; };
 		BF4336E5243A5F6300ED6188 /* AppleIDButtonWrapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppleIDButtonWrapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4336E8243A5F6300ED6188 /* AppleIDButtonWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppleIDButtonWrapper.h; sourceTree = "<group>"; };
 		BF4336E9243A5F6300ED6188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4336EE243A5F6300ED6188 /* AppleIDButtonWrapperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppleIDButtonWrapperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF4336F3243A5F6300ED6188 /* AppleIDButtonWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDButtonWrapperTests.swift; sourceTree = "<group>"; };
 		BF4336F5243A5F6300ED6188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF4336FF243A5FD800ED6188 /* AppleIDButtonWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDButtonWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +58,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF22AAD7243AB13F004F9542 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF22AAD5243AA6B0004F9542 /* UserInformation.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF22AAD8243AB14D004F9542 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				BF4336FF243A5FD800ED6188 /* AppleIDButtonWrapper.swift */,
+				BF22AAD3243A9F5B004F9542 /* AppleSignInWrapper.swift */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
+		BF22AAD9243AB161004F9542 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BF22AADA243AB181004F9542 /* AppleIDLoginDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		BF4336DB243A5F6300ED6188 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +104,9 @@
 		BF4336E7243A5F6300ED6188 /* AppleIDButtonWrapper */ = {
 			isa = PBXGroup;
 			children = (
+				BF22AAD9243AB161004F9542 /* Delegate */,
+				BF22AAD8243AB14D004F9542 /* Wrappers */,
+				BF22AAD7243AB13F004F9542 /* Model */,
 				BF4336E8243A5F6300ED6188 /* AppleIDButtonWrapper.h */,
 				BF4336E9243A5F6300ED6188 /* Info.plist */,
 			);
@@ -148,6 +184,7 @@
 				TargetAttributes = {
 					BF4336E4243A5F6300ED6188 = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 					BF4336ED243A5F6300ED6188 = {
 						CreatedOnToolsVersion = 11.4;
@@ -195,6 +232,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF22AADB243AB181004F9542 /* AppleIDLoginDelegate.swift in Sources */,
+				BF22AAD4243A9F5B004F9542 /* AppleSignInWrapper.swift in Sources */,
+				BF22AAD6243AA6B0004F9542 /* UserInformation.swift in Sources */,
+				BF433700243A5FD800ED6188 /* AppleIDButtonWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +381,7 @@
 		BF4336FA243A5F6300ED6188 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9Q24Z7YFB7;
@@ -348,6 +390,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AppleIDButtonWrapper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,6 +399,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.GAR.AppleIDButtonWrapper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -364,6 +409,7 @@
 		BF4336FB243A5F6300ED6188 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9Q24Z7YFB7;
@@ -372,6 +418,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = AppleIDButtonWrapper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,6 +427,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mx.com.GAR.AppleIDButtonWrapper;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -388,6 +436,7 @@
 		BF4336FD243A5F6300ED6188 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Q24Z7YFB7;
 				INFOPLIST_FILE = AppleIDButtonWrapperTests/Info.plist;
@@ -406,6 +455,7 @@
 		BF4336FE243A5F6300ED6188 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9Q24Z7YFB7;
 				INFOPLIST_FILE = AppleIDButtonWrapperTests/Info.plist;
