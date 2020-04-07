@@ -113,4 +113,6 @@ class ViewController: AppleIDLoginDelegate {
    * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Setup1.png "How to set AppleIDButtonWrapper")   
    * Enjoy and custom your button
    * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/setup2.png "How to set AppleIDButtonWrapper")  
-      
+   * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Example2.png "How to set AppleIDButtonWrapper")  
+   * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Example1.png "How to set AppleIDButtonWrapper") 
+   
