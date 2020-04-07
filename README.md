@@ -116,3 +116,5 @@ class ViewController: AppleIDLoginDelegate {
    * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Example2.png "How to set AppleIDButtonWrapper")  
    * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Example1.png "How to set AppleIDButtonWrapper") 
    
+## Notes
+Visit this Git https://github.com/LeeKahSeng/SwiftSenpai-ASAuthorizationAppleIDButton-Storyboard
