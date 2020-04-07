@@ -60,3 +60,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 ```
+
+* How to implement Apple Sign In with the Wrapper
+
+```
+import UIKit
+import AuthenticationServices
+import AppleSignInWrapper
+
+@available(iOS 13.0, *)
+class ViewController: AppleIDLoginDelegate {
+    // MARK: - Outlets
+
+    @IBOutlet weak var btnAppleSignIn: AppleIDButtonWrapper!
+    
+    var appleWrapper: AppleSignInWrapper!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        btnAppleSignIn.addTarget(self,
+                                 action: #selector(userTappedSignInWithApple),
+                                 for: .touchUpInside)
+        appleWrapper = AppleSignInWrapper(view: self.view)
+        appleWrapper.delegate = self
+        // Do any additional setup after loading the view.
+    }
+    
+    @objc func userTappedSignInWithApple() {
+        appleWrapper.requestSignIn()
+    }
+    
+    func appleSignInWrapper(didComplete withError: Error) {
+
+    }
+    
+    func appleSignInWrapper(didComplete withUser: UserInformation) {
+        // Here you should save your user identifier and backend stuff
+         
+    }
+}
+    
+    ```
