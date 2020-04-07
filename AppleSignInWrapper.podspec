@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name = "AppleSignInWrapper"
-  spec.version = "1.0"
+  spec.version = "0.1"
   spec.summary = "AppleSignInWrapper for iOS"
   spec.description = "An easy way to implement Apple Sign In"
   spec.homepage = "https://github.com/chibombo/AppleIDButtonWrapper"
