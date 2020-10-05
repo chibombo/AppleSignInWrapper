@@ -17,9 +17,16 @@ An easy way to implement Apple Sign In
 * SetUp Capabilities of the Project
 
 ## Installation
-
+### CocoaPods
+Just add the next line in your podfile
 ```
 pod 'AppleSignInWrapper'
+```
+### Swift Package Manager
+Just add the next URL in the Swift Package of your project and set the last version
+
+```
+https://github.com/chibombo/AppleIDButtonWrapper
 ```
 
 ## Example
@@ -109,14 +116,16 @@ class ViewController: AppleIDLoginDelegate {
 
 * How to use AppleSignInButton in Storyboards
    * Create an UIButton in your Storyboard
-   * Set **AppleIDButtonWrapper** as Custom Class of the button
+   * Set **AppleIDButtonWrapper** as Custom Class of the button NOTE: If you are using SwiftPackageManager, use module **AppleIDButtonWrapper** , instead of **AppleSignInWrapper**
    * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Setup1.png "How to set AppleIDButtonWrapper")   
    * Enjoy and custom your button
    * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/setup2.png "How to set AppleIDButtonWrapper")  
    * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Example2.png "How to set AppleIDButtonWrapper")  
    * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Example1.png "How to set AppleIDButtonWrapper") 
-   
+   * **If you use Constraints, please read the Apple Guidelines to avoid warnings in your constraints and the button appear correctly in your view.**
 ## Notes
 * Visit this Git https://github.com/LeeKahSeng/SwiftSenpai-ASAuthorizationAppleIDButton-Storyboard
 
 * Apple Guidelines https://developer.apple.com/sign-in-with-apple/get-started/
+
+* If you are using SwiftPackageManager, use module **AppleIDButtonWrapper** , instead of **AppleSignInWrapper**
