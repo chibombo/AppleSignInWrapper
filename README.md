@@ -1,9 +1,21 @@
-# AppleSignInWrapper
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=chibombo_AppleIDButtonWrapper&metric=alert_status)](https://sonarcloud.io/dashboard?id=chibombo_AppleIDButtonWrapper)
 
+# AppleSignInWrapper
 An easy way to implement Apple Sign In
 
-## Features
+## Content
+1. [Features](#features)
+2. [Requirements](#requirements)
+3. [Installation](#installation)
+   * [CocoaPods](#cocoapods)
+   * [Swift Package Manager](#swift-package-manager)
+4. [UIKit Example](#uikit-example)
+5. [SwiftUI Example](#swiftui-example)
+6. [Notes](#notes)
 
+
+## Features
+* Apple Sign in Button in SwiftUI!
 * Apple Sign In Button in Storyboard!
     * States
     * Colors
@@ -29,7 +41,7 @@ Just add the next URL in the Swift Package of your project and set the last vers
 https://github.com/chibombo/AppleIDButtonWrapper
 ```
 
-## Example
+## UIKit Example
 
 * How to check **state** of the session if exist. **KeychainItem** is used to get and set appleId in Keychain(Not included in the wrapper)
 
@@ -123,6 +135,105 @@ class ViewController: AppleIDLoginDelegate {
    * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Example2.png "How to set AppleIDButtonWrapper")  
    * ![How to set AppleIDButtonWrapper](https://github.com/chibombo/AppleIDButtonWrapper/blob/source/Resources/Example1.png "How to set AppleIDButtonWrapper") 
    * **If you use Constraints, please read the Apple Guidelines to avoid warnings in your constraints and the button appear correctly in your view.**
+
+## SwiftUI Example
+
+* Create an **UIViewRepresentable** to use **AppleIDButtonWrapper**
+```
+import SwiftUI
+import AppleSignInWrapper
+
+struct AppleSignInButton: UIViewRepresentable {
+    
+    @Binding var firstName: String
+    @Binding var lastName: String
+    @Binding var userIdentifier: String
+    @Binding var email: String?
+    
+    typealias UIViewType = AppleIDButtonWrapper
+    
+    func makeCoordinator() -> AppleSignInCoordinator {
+        return AppleSignInCoordinator(loginView: self)
+    }
+
+    func makeUIView(context: UIViewRepresentableContext<AppleSignInButton>) -> AppleIDButtonWrapper {
+        let appleSignInButton = AppleIDButtonWrapper()
+        appleSignInButton.authButtonType = 1
+        appleSignInButton.authButtonStyle = 2
+        appleSignInButton.layer.cornerRadius = 0
+        appleSignInButton.addTarget(context.coordinator, action: #selector(context.coordinator.userTappedAppleSignIn), for: .touchUpInside)
+        return appleSignInButton
+    }
+
+    func updateUIView(_ uiView: AppleIDButtonWrapper, context: UIViewRepresentableContext<AppleSignInButton>) {
+    }
+}
+```
+* Create a **coordinator** in order to manage delegate methods of our wrapper.
+
+```
+import SwiftUI
+import AuthenticationServices
+import AppleSignInWrapper
+
+class AppleSignInCoordinator: NSObject {
+    
+    var appleWrapper: AppleSignInWrapper!
+    var loginView: AppleSignInButton?
+
+    override init() {
+        super.init()
+        appleWrapper = AppleSignInWrapper()
+        appleWrapper.delegate = self
+    }
+
+    init(loginView: AppleSignInButton) {
+        super.init()
+        self.loginView = loginView
+        appleWrapper = AppleSignInWrapper()
+        appleWrapper.delegate = self
+    }
+
+    @objc func userTappedAppleSignIn() {
+        appleWrapper.view = UIApplication.shared.windows.last!.rootViewController?.view
+        appleWrapper.requestSignIn()
+    }
+}
+
+extension AppleSignInCoordinator: AppleIDLoginDelegate {
+    func appleSignInWrapper(didComplete withError: Error) {
+        
+    }
+    
+    func appleSignInWrapper(didComplete withUser: UserInformation) {
+        loginView?.email = withUser.email
+        loginView?.firstName = withUser.firstName
+        loginView?.lastName = withUser.lastName
+        loginView?.userIdentifier = withUser.userIdentifier       
+    }  
+}
+```
+* Use your **AppleSignInButton**
+```
+import SwiftUI
+
+struct ContentView: View {
+    var body: some View {
+        AppleSignInButton(firstName: .constant(""),
+                          lastName: .constant(""),
+                          userIdentifier: .constant(""),
+                          email: .constant(""))
+            .frame(width: 200, height: 40, alignment: .center)
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
+```
+
 ## Notes
 * Visit this Git https://github.com/LeeKahSeng/SwiftSenpai-ASAuthorizationAppleIDButton-Storyboard
 
