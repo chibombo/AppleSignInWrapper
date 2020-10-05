@@ -23,6 +23,7 @@ let package = Package(
         .target(
             name: "AppleIDButtonWrapper",
             path: "Sources",
+            exclude:["Info.plist"],
             linkerSettings: [.linkedFramework("AuthenticationServices",
                                               .when(platforms: [.iOS]))]),
         .testTarget(
