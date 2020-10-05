@@ -18,6 +18,6 @@ Pod::Spec.new do |spec|
   spec.social_media_url = "https://twitter.com/genaro_arvizu"
   spec.platform = :ios, "9.0"
   spec.source = { :git => "https://github.com/chibombo/AppleIDButtonWrapper.git", :tag => spec.version }
-  spec.source_files = "AppleIDButtonWrapper/**/*.swift"
+  spec.source_files = "Sources/**/*.swift"
   spec.swift_versions = ['5.0', '5.1', '5.2']
 end
