@@ -7,28 +7,33 @@
 //
 
 import XCTest
+import AuthenticationServices
 @testable import AppleIDButtonWrapper
 
 class AppleIDButtonWrapperTests: XCTestCase {
 
+    var wrapper: AppleIDButtonWrapper!
+        
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        wrapper = AppleIDButtonWrapper()
+        wrapper.draw(.zero)
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        wrapper = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testButtonDefaultType_whenUser_useDefaultValues() throws {
+        let defaultType: ASAuthorizationAppleIDButton.ButtonType = ASAuthorizationAppleIDButton.ButtonType.default
+        
+        XCTAssert(wrapper.authButtonType == defaultType.rawValue)
+
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testButtonDefaultStyle_whenUser_useDefaultValues() throws {
+        let defaultStyle: ASAuthorizationAppleIDButton.Style = .black
+        
+        XCTAssert(wrapper.authButtonStyle == defaultStyle.rawValue)
     }
 
 }
