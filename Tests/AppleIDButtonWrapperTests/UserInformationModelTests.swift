@@ -14,7 +14,11 @@ class UserInformationModelTests: XCTestCase {
     var model: UserInformation!
     
     override func setUpWithError() throws {
-        
+        model = UserInformation(userIdentifier: "",
+                                firstName: "",
+                                lastName: "",
+                                email: "",
+                                token: "")
     }
 
     override func tearDownWithError() throws {
