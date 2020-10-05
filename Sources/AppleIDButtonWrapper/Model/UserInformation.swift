@@ -10,14 +10,13 @@ import Foundation
 import AuthenticationServices
 
 public struct UserInformation {
-    
-    
+
     public let userIdentifier: String
     public let firstName: String
     public let lastName: String
     public let email: String?
     public let token: String?
-    
+
     public init(userIdentifier: String, firstName: String, lastName: String, email: String?, token: String?) {
         self.userIdentifier = userIdentifier
         self.firstName = firstName
@@ -25,19 +24,19 @@ public struct UserInformation {
         self.email = email
         self.token = token
     }
-    
+
     public init(userIdentifier: String, firstName: String, lastName: String, email: String?, token: Data?) {
         self.userIdentifier = userIdentifier
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
-        if let tokenData: Data = token, let aToken: String = String(data:tokenData, encoding: .utf8) {
+        if let tokenData: Data = token, let aToken: String = String(data: tokenData, encoding: .utf8) {
             self.token = aToken
         } else {
             self.token = nil
         }
     }
-    
+
     @available(iOS 13.0, *)
     public init(_ appleIDCredential: ASAuthorizationAppleIDCredential) {
         self.userIdentifier = appleIDCredential.user
@@ -45,9 +44,9 @@ public struct UserInformation {
         self.lastName = appleIDCredential.fullName?.familyName ?? ""
         self.email = appleIDCredential.email ?? ""
         if let tokenData: Data = appleIDCredential.identityToken,
-            let aToken: String = String(data:tokenData, encoding: .utf8)  {
+            let aToken: String = String(data: tokenData, encoding: .utf8) {
             self.token = aToken
-            
+
         } else {
             self.token = nil
         }

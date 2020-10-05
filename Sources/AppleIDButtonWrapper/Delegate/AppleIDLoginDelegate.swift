@@ -10,12 +10,11 @@ import Foundation
 import AuthenticationServices
 
 public protocol AppleIDLoginDelegate: class {
+
     /// This method is called when an Error occurs
     /// - Parameter with: Error from Apple Sign In proccess
-    func appleSignInWrapper(didComplete withError: Error) -> Void
-    
+    func appleSignInWrapper(didComplete withError: Error)
     /// This method is called when the Sign In was success
     /// - Parameter with: First name, last name,  id, optional token, optional email
-    func appleSignInWrapper(didComplete withUser: UserInformation) -> Void
-    
+    func appleSignInWrapper(didComplete withUser: UserInformation)
 }
