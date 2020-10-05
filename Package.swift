@@ -19,14 +19,11 @@ let package = Package(
             name: "AppleIDButtonWrapper",
             targets: ["AppleIDButtonWrapper"])
     ],
-    dependencies: [
-    ],
     targets: [
 
         .target(
             name: "AppleIDButtonWrapper",
-            path: "Sources",
-            dependencies: []),
+            path: "Sources"),
         .testTarget(
             name: "AppleIDButtonWrapperTests",
             dependencies: ["AppleIDButtonWrapper"])
