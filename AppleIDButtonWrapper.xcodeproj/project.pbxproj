@@ -115,7 +115,6 @@
 		BF4336E7243A5F6300ED6188 /* AppleIDButtonWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				BF4336E9243A5F6300ED6188 /* Info.plist */,
 				BF22AAD9243AB161004F9542 /* Delegate */,
 				BF22AAD8243AB14D004F9542 /* Wrappers */,
 				BF22AAD7243AB13F004F9542 /* Model */,
@@ -135,6 +134,7 @@
 		BFEDAF10252A91D80037C725 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				BF4336E9243A5F6300ED6188 /* Info.plist */,
 				BF4336E7243A5F6300ED6188 /* AppleIDButtonWrapper */,
 			);
 			path = Sources;
@@ -438,7 +438,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/AppleIDButtonWrapper/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +468,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Sources/AppleIDButtonWrapper/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
