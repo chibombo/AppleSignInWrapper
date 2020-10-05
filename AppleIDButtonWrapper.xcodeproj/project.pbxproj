@@ -13,6 +13,9 @@
 		BF4336F4243A5F6300ED6188 /* AppleIDButtonWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4336F3243A5F6300ED6188 /* AppleIDButtonWrapperTests.swift */; };
 		BF4336F6243A5F6300ED6188 /* AppleIDButtonWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = BF4336E8243A5F6300ED6188 /* AppleIDButtonWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF433700243A5FD800ED6188 /* AppleIDButtonWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4336FF243A5FD800ED6188 /* AppleIDButtonWrapper.swift */; };
+		BF673AAA252B857400CCEB35 /* UserInformationModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF673AA9252B857400CCEB35 /* UserInformationModelTests.swift */; };
+		BF673AB0252B902600CCEB35 /* AppleSignInWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF673AAF252B902600CCEB35 /* AppleSignInWrapperTests.swift */; };
+		BF673ABD252B927A00CCEB35 /* AppleIDLoginDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF673AB7252B920B00CCEB35 /* AppleIDLoginDelegateSpy.swift */; };
 		BFEDAF14252A92190037C725 /* AppleIDLoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFEDAF13252A92190037C725 /* AppleIDLoginDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +39,9 @@
 		BF4336F3243A5F6300ED6188 /* AppleIDButtonWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDButtonWrapperTests.swift; sourceTree = "<group>"; };
 		BF4336F5243A5F6300ED6188 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF4336FF243A5FD800ED6188 /* AppleIDButtonWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDButtonWrapper.swift; sourceTree = "<group>"; };
+		BF673AA9252B857400CCEB35 /* UserInformationModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformationModelTests.swift; sourceTree = "<group>"; };
+		BF673AAF252B902600CCEB35 /* AppleSignInWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInWrapperTests.swift; sourceTree = "<group>"; };
+		BF673AB7252B920B00CCEB35 /* AppleIDLoginDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleIDLoginDelegateSpy.swift; sourceTree = "<group>"; };
 		BFEDAF13252A92190037C725 /* AppleIDLoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleIDLoginDelegate.swift; sourceTree = "<group>"; };
 		BFEDAF29252A95340037C725 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		BFEDAF2C252A95970037C725 /* AppleSignInWrapper.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppleSignInWrapper.podspec; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				BF4336F3243A5F6300ED6188 /* AppleIDButtonWrapperTests.swift */,
+				BF673AA9252B857400CCEB35 /* UserInformationModelTests.swift */,
+				BF673AAF252B902600CCEB35 /* AppleSignInWrapperTests.swift */,
+				BF673AB7252B920B00CCEB35 /* AppleIDLoginDelegateSpy.swift */,
 				BF4336F5243A5F6300ED6188 /* Info.plist */,
 			);
 			path = AppleIDButtonWrapperTests;
@@ -290,7 +299,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF673AB0252B902600CCEB35 /* AppleSignInWrapperTests.swift in Sources */,
 				BF4336F4243A5F6300ED6188 /* AppleIDButtonWrapperTests.swift in Sources */,
+				BF673AAA252B857400CCEB35 /* UserInformationModelTests.swift in Sources */,
+				BF673ABD252B927A00CCEB35 /* AppleIDLoginDelegateSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
