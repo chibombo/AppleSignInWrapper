@@ -8,7 +8,7 @@
 
 import XCTest
 import AuthenticationServices
-@testable import AppleIDButtonWrapper
+@testable import AppleSignInWrapper
 
 class AppleIDButtonWrapperTests: XCTestCase {
 

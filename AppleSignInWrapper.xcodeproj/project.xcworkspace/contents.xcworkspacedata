@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:AppleIDButtonWrapper.xcodeproj">
+      location = "self:/Users/genaro/Documents/Git/AppleIDButtonWrapper/AppleSignInWrapper.xcodeproj">
    </FileRef>
 </Workspace>

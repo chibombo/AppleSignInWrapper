@@ -10,26 +10,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "AppleIDButtonWrapper",
+    name: "AppleSignInWrapper",
     platforms: [.iOS(.v13)],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
-            name: "AppleIDButtonWrapper",
-            targets: ["AppleIDButtonWrapper"])
+            name: "AppleSignInWrapper",
+            targets: ["AppleSignInWrapper"])
     ],
     targets: [
 
         .target(
-            name: "AppleIDButtonWrapper",
+            name: "AppleSignInWrapper",
             path: "Sources",
             exclude:["Info.plist"],
             linkerSettings: [.linkedFramework("AuthenticationServices",
                                               .when(platforms: [.iOS])),
-                             .linkedFramework("CryptoKit",.when(platforms: [.iOS]))
+                             .linkedFramework("CryptoKit", .when(platforms: [.iOS]))
             ]),
         .testTarget(
-            name: "AppleIDButtonWrapperTests",
-            dependencies: ["AppleIDButtonWrapper"])
+            name: "AppleSignInWrapperTests",
+            dependencies: ["AppleSignInWrapper"])
     ]
 )

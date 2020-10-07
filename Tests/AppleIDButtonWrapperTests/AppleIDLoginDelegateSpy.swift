@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@testable import AppleIDButtonWrapper
+@testable import AppleSignInWrapper
 class AppleIDLoginDelegateSpy: AppleIDLoginDelegate {
        
     var isSignIn: Bool = false
