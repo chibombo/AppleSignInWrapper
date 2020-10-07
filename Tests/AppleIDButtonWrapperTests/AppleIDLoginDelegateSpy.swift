@@ -21,7 +21,7 @@ class AppleIDLoginDelegateSpy: AppleIDLoginDelegate {
         error = withError
     }
     
-    func appleSignInWrapper(didComplete withUser: UserInformation) {
+    func appleSignInWrapper(didComplete withUser: UserInformation, nonce: String?) {
         isSignIn = true
         user = withUser
     }

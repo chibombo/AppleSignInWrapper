@@ -15,6 +15,6 @@ public protocol AppleIDLoginDelegate: class {
     /// - Parameter with: Error from Apple Sign In proccess
     func appleSignInWrapper(didComplete withError: Error)
     /// This method is called when the Sign In was success
-    /// - Parameter with: First name, last name,  id, optional token, optional email
-    func appleSignInWrapper(didComplete withUser: UserInformation)
+    /// - Parameter with: First name, last name,  id, optional token, optional email, optional nonce
+    func appleSignInWrapper(didComplete withUser: UserInformation, nonce: String?)
 }

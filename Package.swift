@@ -25,7 +25,8 @@ let package = Package(
             path: "Sources",
             exclude:["Info.plist"],
             linkerSettings: [.linkedFramework("AuthenticationServices",
-                                              .when(platforms: [.iOS]))]),
+                                              .when(platforms: [.iOS])),
+                             .linkedFramework("CryptoKit").when(platforms: [.iOS])]),
         .testTarget(
             name: "AppleIDButtonWrapperTests",
             dependencies: ["AppleIDButtonWrapper"])

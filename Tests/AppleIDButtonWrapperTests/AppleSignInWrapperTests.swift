@@ -50,9 +50,29 @@ class AppleSignInWrapperTests: XCTestCase {
                                                      email: email,
                                                      token: token)
         
-        wrapper.delegate?.appleSignInWrapper(didComplete: model)
+        wrapper.delegate?.appleSignInWrapper(didComplete: model, nonce: nil)
         
         XCTAssert(spy.user.userIdentifier == model.userIdentifier, "Different User")
     }
 
+    func testDelegate_WhenUserUseNonce_SignIn() throws {
+        wrapper = AppleSignInWrapper(view: UIView())
+        wrapper.delegate = spy
+        let identifier: String = UUID().uuidString
+        let firstName: String = "Fulano"
+        let lastName: String = "Perengano"
+        let email: String = "your@email.com"
+        let token: String = "Token"
+        
+        let model: UserInformation = UserInformation(userIdentifier: identifier,
+                                                     firstName: firstName,
+                                                     lastName: lastName,
+                                                     email: email,
+                                                     token: token)
+        
+        wrapper.delegate?.appleSignInWrapper(didComplete: model, nonce: "MyNonce")
+        
+        XCTAssert(spy.user.userIdentifier == model.userIdentifier, "Different User")
+    }
+    
 }
