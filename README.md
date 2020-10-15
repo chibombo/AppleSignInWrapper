@@ -119,7 +119,7 @@ class ViewController: AppleIDLoginDelegate {
 
     }
     
-    func appleSignInWrapper(didComplete withUser: UserInformation) {
+    func appleSignInWrapper(didComplete withUser: UserInformation, nonce: String?) {
         // Here you should save your user identifier and backend stuff
          
     }
