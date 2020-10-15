@@ -38,7 +38,7 @@ pod 'AppleSignInWrapper'
 Just add the next URL in the Swift Package of your project and set the last version
 
 ```
-https://github.com/chibombo/AppleIDButtonWrapper
+https://github.com/chibombo/AppleSignInWrapper
 ```
 
 ## UIKit Example
