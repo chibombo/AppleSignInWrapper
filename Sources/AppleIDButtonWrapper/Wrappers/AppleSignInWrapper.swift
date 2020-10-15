@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CryptoKit
 import AuthenticationServices
 
 @available(iOS 13.0, *)
@@ -14,6 +15,7 @@ open class AppleSignInWrapper: NSObject {
     /// ViewController View
     public var view: UIView!
     public weak var delegate: AppleIDLoginDelegate?
+    private var currentNonce: String?
     /// Constructor
     /// - Parameter view: ViewController View where Apple Sign In screen should be presented
     public init(view: UIView) {
@@ -37,18 +39,36 @@ open class AppleSignInWrapper: NSObject {
             }
         }
     }
-
-    public func requestSignIn(scopes: [ASAuthorization.Scope] = [.fullName, .email]) {
+    
+    /// Request Sign In
+    /// - Parameters:
+    ///   - scopes: Array with default values, [.fullName, .email]
+    ///   - nonce: Optional string, apple and some user managers use this nonce to validate the integrity of the auth, sha256.
+    public func requestSignIn(scopes: [ASAuthorization.Scope] = [.fullName, .email], nonce: String? = nil) {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
         request.requestedScopes = scopes
-
+        currentNonce = nonce
+        request.nonce = sha256(nonce)
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
         authorizationController.delegate = self
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
     }
 
+    @available(iOS 13, *)
+    private func sha256(_ input: String?) -> String? {
+        guard let input: String = input else {
+            return nil
+        }
+        let inputData = Data(input.utf8)
+        let hashedData = SHA256.hash(data: inputData)
+        let hashString = hashedData.compactMap {
+            return String(format: "%02x", $0)
+        }.joined()
+        return hashString
+    }
+    
 }
 
 @available(iOS 13.0, *)
@@ -57,9 +77,8 @@ extension AppleSignInWrapper: ASAuthorizationControllerDelegate {
     public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
 
         if let appleIDCredential: ASAuthorizationAppleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-
             let user: UserInformation = UserInformation(appleIDCredential)
-            delegate?.appleSignInWrapper(didComplete: user)
+            delegate?.appleSignInWrapper(didComplete: user, nonce: currentNonce)
         }
     }
 

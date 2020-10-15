@@ -9,15 +9,15 @@
 Pod::Spec.new do |spec|
 
   spec.name = "AppleSignInWrapper"
-  spec.version = "1.1"
+  spec.version = "1.2"
   spec.summary = "AppleSignInWrapper for iOS"
   spec.description = "An easy way to implement Apple Sign In"
-  spec.homepage = "https://github.com/chibombo/AppleIDButtonWrapper"
+  spec.homepage = "https://github.com/chibombo/AppleSignInWrapper"
   spec.license = "MIT"
   spec.author = { "Genaro Arvizu" => "genaro.arvizu.vega@icloud.com" }
   spec.social_media_url = "https://twitter.com/genaro_arvizu"
   spec.platform = :ios, "9.0"
-  spec.source = { :git => "https://github.com/chibombo/AppleIDButtonWrapper.git", :tag => spec.version }
+  spec.source = { :git => "https://github.com/chibombo/AppleSignInWrapper.git", :tag => spec.version }
   spec.source_files = "Sources/**/*.swift"
   spec.swift_versions = ['5.0', '5.1', '5.2', '5.3']
 end
