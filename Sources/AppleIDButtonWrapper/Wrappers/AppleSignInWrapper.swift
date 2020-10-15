@@ -39,7 +39,11 @@ open class AppleSignInWrapper: NSObject {
             }
         }
     }
-
+    
+    /// Request Sign In
+    /// - Parameters:
+    ///   - scopes: Array with default values, [.fullName, .email]
+    ///   - nonce: Optional string, apple and some user managers use this nonce to validate the integrity of the auth, sha256.
     public func requestSignIn(scopes: [ASAuthorization.Scope] = [.fullName, .email], nonce: String? = nil) {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
